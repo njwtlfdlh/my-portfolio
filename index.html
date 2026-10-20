@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The personal portfolio of Najwatul Fadilah Jonaidi, a Multimedia Computing student at UNIMAS.">
-    <title>Najwatul Fadilah | Student Portfolio</title>
+    <meta name="description" content="Student portfolio of Najwatul Fadilah Jonaidi, a Multimedia Computing student at UNIMAS.">
+    <title>Najwatul Fadilah | My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
     <!-- Navigation -->
-    <header class="header">
+    <header class="header" id="top">
         <nav class="navbar container">
             <a href="#home" class="logo">My<span>Portfolio.</span></a>
 
@@ -21,13 +21,28 @@
                 <a href="#skills">My Skills</a>
                 <a href="#education">Education</a>
                 <a href="#achievements">Achievements</a>
-                <a href="#contact" class="nav-contact">Contact Me</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-tools">
+                <div class="clock-box">
+                    <span class="clock-icon">🕒</span>
+                    <div>
+                        <span id="current-date">Loading date...</span>
+                        <strong id="current-time">Loading time...</strong>
+                    </div>
+                </div>
+
+                <button id="theme-toggle" class="theme-toggle"
+                        type="button" aria-label="Switch to dark mode">
+                    🌙 Dark Mode
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Home Section -->
+        <!-- Home -->
         <section id="home" class="hero">
             <div class="container hero-content">
                 <div class="hero-text">
@@ -37,9 +52,13 @@
 
                     <h2>Multimedia Computing Student</h2>
 
+                    <p id="greeting-message" class="greeting-message">
+                        Welcome to my portfolio!
+                    </p>
+
                     <p class="hero-description">
-                        I am a student at Universiti Malaysia Sarawak (UNIMAS)
-                        who enjoys learning about programming, web design,
+                        I am a student at Universiti Malaysia Sarawak (UNIMAS).
+                        I enjoy learning about programming, web design,
                         and creative technology.
                     </p>
 
@@ -52,9 +71,9 @@
                 <div class="hero-decoration">
                     <div class="profile-circle">
                         <span class="profile-icon">✦</span>
-                        <p>Learn</p>
-                        <p>Create</p>
-                        <p>Grow</p>
+                        <p>LEARN</p>
+                        <p>CREATE</p>
+                        <p>GROW</p>
                     </div>
                     <span class="floating-star star-one">✦</span>
                     <span class="floating-star star-two">✧</span>
@@ -63,7 +82,7 @@
             </div>
         </section>
 
-        <!-- About Me Section -->
+        <!-- About Me -->
         <section id="about" class="section">
             <div class="container">
                 <div class="section-heading">
@@ -78,48 +97,56 @@
                     <div class="about-text">
                         <h3>Who Am I?</h3>
 
-                        <p>
-                            Hi! My name is Najwatul Fadilah Jonaidi, and I am
-                            a Multimedia Computing student at Universiti
-                            Malaysia Sarawak (UNIMAS).
-                        </p>
+                        <div id="about-details">
+                            <p>
+                                Hi! My name is Najwatul Fadilah Jonaidi,
+                                and I am a Multimedia Computing student at
+                                Universiti Malaysia Sarawak (UNIMAS).
+                            </p>
 
-                        <p>
-                            I am interested in Computer Science because I want
-                            to understand how technology works and how
-                            programming can be used to solve real-life problems.
-                            I am also interested in creating websites that are
-                            creative, useful, and easy to use.
-                        </p>
+                            <p>
+                                I am interested in Computer Science because
+                                I want to understand how technology works
+                                and how programming can solve real-life
+                                problems. I am also interested in creating
+                                websites that are creative, useful, and easy
+                                to use.
+                            </p>
 
-                        <p>
-                            I created this portfolio to introduce myself,
-                            showcase my skills, and share my academic projects
-                            and learning progress. It also gives me a place to
-                            document my improvement as I gain more knowledge
-                            and experience.
-                        </p>
+                            <p>
+                                I created this portfolio to introduce myself,
+                                showcase my skills, and share my academic
+                                projects and learning progress. I hope to
+                                improve my knowledge and gain more experience
+                                throughout my studies.
+                            </p>
+                        </div>
+
+                        <button id="about-toggle" class="btn btn-outline"
+                                type="button" aria-expanded="true">
+                            Show Less
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- My Skills Section -->
+        <!-- Skills -->
         <section id="skills" class="section section-tinted">
             <div class="container">
                 <div class="section-heading">
-                    <p class="eyebrow">WHAT I CAN DO</p>
+                    <p class="eyebrow">WHAT I AM LEARNING</p>
                     <h2>My <span>Skills</span></h2>
-                    <p>Skills I am learning and developing throughout my studies.</p>
+                    <p>Skills that I continue to develop through practice.</p>
                 </div>
 
                 <div class="skills-grid">
                     <article class="card skill-card">
                         <div class="card-icon">⌘</div>
                         <h3>Technical Skills</h3>
-                        <p class="card-description">
-                            Technical knowledge that I develop through
-                            learning and practice.
+                        <p>
+                            My technical skills help me learn programming
+                            and create digital projects.
                         </p>
 
                         <div class="skill-tags">
@@ -135,9 +162,9 @@
                     <article class="card skill-card">
                         <div class="card-icon">✧</div>
                         <h3>Personal Skills</h3>
-                        <p class="card-description">
-                            Personal qualities that help me work with others
-                            and approach challenges.
+                        <p>
+                            These skills help me collaborate with others
+                            and approach tasks positively.
                         </p>
 
                         <div class="skill-tags">
@@ -151,28 +178,29 @@
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Education -->
         <section id="education" class="section">
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow">MY LEARNING JOURNEY</p>
                     <h2>My <span>Education</span></h2>
-                    <p>My educational background and current learning journey.</p>
+                    <p>My educational background and current studies.</p>
                 </div>
 
                 <div class="education-list">
                     <article class="card education-card">
                         <div class="education-marker">01</div>
+
                         <div>
                             <p class="education-label">CURRENT STUDIES</p>
                             <h3>Universiti Malaysia Sarawak (UNIMAS)</h3>
                             <p class="education-course">Multimedia Computing</p>
 
                             <p>
-                                I am developing my knowledge and skills in
-                                computing, programming, and multimedia.
-                                My studies help me understand how technology
-                                can be used to create practical digital solutions.
+                                I am developing my knowledge in computing,
+                                programming, and multimedia. My studies help
+                                me understand how technology can be used to
+                                create useful digital solutions.
                             </p>
 
                             <h4>What I Am Learning</h4>
@@ -188,6 +216,7 @@
 
                     <article class="card education-card">
                         <div class="education-marker">02</div>
+
                         <div>
                             <p class="education-label">PREVIOUS EDUCATION</p>
                             <h3>SMK Elopura Dua</h3>
@@ -202,40 +231,41 @@
             </div>
         </section>
 
-        <!-- Achievements Section -->
+        <!-- Achievements -->
         <section id="achievements" class="section section-tinted">
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow">MY PROGRESS</p>
                     <h2>Academic <span>Achievements</span></h2>
-                    <p>Every learning experience is a step towards improvement.</p>
+                    <p>Every learning experience is a step forward.</p>
                 </div>
 
-                <div class="card achievement-card">
+                <article class="card achievement-card">
                     <div class="achievement-icon">✧</div>
+
                     <h3>Currently Building My Experience</h3>
 
                     <p>
                         I am currently developing my knowledge and skills
                         through academic projects, assignments, and continuous
-                        learning. Although I do not have specific academic
-                        achievements to list here yet, I look forward to
-                        updating this section with future achievements,
-                        certificates, and experiences as I progress in my studies.
+                        learning. I do not have specific academic achievements
+                        to list here yet, but I will update this section with
+                        future achievements, certificates, and experiences
+                        as I progress in my studies.
                     </p>
 
                     <span class="status-label">More to come</span>
-                </div>
+                </article>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section contact-section">
+        <!-- Contact -->
+        <section id="contact" class="section">
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow">LET'S CONNECT</p>
                     <h2>Contact <span>Me</span></h2>
-                    <p>Feel free to reach out or explore my work online.</p>
+                    <p>Feel free to email me or visit my GitHub profile.</p>
                 </div>
 
                 <div class="contact-grid">
@@ -271,5 +301,124 @@
             </p>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" type="button"
+            aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+
+    <!-- Five JavaScript Functions -->
+    <script>
+        // 1. CURRENT TIME
+        const dateDisplay = document.getElementById("current-date");
+        const timeDisplay = document.getElementById("current-time");
+
+        function updateClock() {
+            const now = new Date();
+
+            dateDisplay.textContent = new Intl.DateTimeFormat("en-MY", {
+                timeZone: "Asia/Kuala_Lumpur",
+                weekday: "short",
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }).format(now);
+
+            timeDisplay.textContent = new Intl.DateTimeFormat("en-MY", {
+                timeZone: "Asia/Kuala_Lumpur",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true
+            }).format(now);
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+
+
+        // 2. DARK MODE TOGGLE
+        const themeToggle = document.getElementById("theme-toggle");
+
+        themeToggle.addEventListener("click", function () {
+            const isDark = document.body.classList.toggle("dark-mode");
+
+            themeToggle.textContent = isDark
+                ? "☀️ Light Mode"
+                : "🌙 Dark Mode";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+            );
+        });
+
+
+        // 3. SHOW / HIDE ABOUT ME
+        const aboutToggle = document.getElementById("about-toggle");
+        const aboutDetails = document.getElementById("about-details");
+
+        aboutToggle.addEventListener("click", function () {
+            const isCurrentlyVisible = !aboutDetails.hidden;
+
+            aboutDetails.hidden = isCurrentlyVisible;
+            aboutToggle.textContent = isCurrentlyVisible
+                ? "Show More"
+                : "Show Less";
+
+            aboutToggle.setAttribute(
+                "aria-expanded",
+                String(!isCurrentlyVisible)
+            );
+        });
+
+
+        // 4. GREETING MESSAGE
+        const greetingMessage = document.getElementById("greeting-message");
+
+        function updateGreeting() {
+            const hour = Number(
+                new Intl.DateTimeFormat("en-MY", {
+                    timeZone: "Asia/Kuala_Lumpur",
+                    hour: "numeric",
+                    hour12: false
+                }).format(new Date())
+            );
+
+            if (hour >= 5 && hour < 12) {
+                greetingMessage.textContent =
+                    "Good morning! Welcome to my portfolio.";
+            } else if (hour >= 12 && hour < 18) {
+                greetingMessage.textContent =
+                    "Good afternoon! Welcome to my portfolio.";
+            } else {
+                greetingMessage.textContent =
+                    "Good evening! Welcome to my portfolio.";
+            }
+        }
+
+        updateGreeting();
+
+
+        // 5. BACK TO TOP
+        const backToTop = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTop.classList.add("visible");
+            } else {
+                backToTop.classList.remove("visible");
+            }
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
 </body>
 </html>
