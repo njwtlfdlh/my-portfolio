@@ -1,315 +1,275 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal student portfolio, projects, skills and education.">
-    <title>My Portfolio | Student Profile</title>
+    <meta name="description" content="The personal portfolio of Najwatul Fadilah Jonaidi, a Multimedia Computing student at UNIMAS.">
+    <title>Najwatul Fadilah | Student Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
     <!-- Navigation -->
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="#home" class="logo">my portfolio<span>.</span></a>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">My<span>Portfolio.</span></a>
 
-            <nav aria-label="Main navigation">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#skills">My Skills</a>
                 <a href="#education">Education</a>
                 <a href="#achievements">Achievements</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <button id="theme-toggle" class="theme-toggle"
-                    type="button" aria-label="Switch to dark mode">
-                ☾
-            </button>
-        </div>
+                <a href="#contact" class="nav-contact">Contact Me</a>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <!-- Home -->
-        <section id="home" class="hero section-container">
-            <div class="hero-content">
-                <p class="eyebrow">STUDENT PORTFOLIO · 2026</p>
-                <h1>Hello, I'm <span>[Najwatul Fadilah Jonaidi]</span>.</h1>
-                <h2>A student who loves learning and creating.</h2>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
 
-                <p class="hero-description">
-                    Welcome to my personal portfolio. This is where I share
-                    my educational journey, skills, academic projects and
-                    achievements as I continue to grow and learn.
-                </p>
+                    <h1>Hello, I'm <span>Najwatul Fadilah Jonaidi</span></h1>
 
-                <div class="hero-buttons">
-                    <a href="#projects" class="button button-primary">
-                        Explore My Work
-                    </a>
-                    <a href="#contact" class="button button-outline">
-                        Contact Me
-                    </a>
+                    <h2>Multimedia Computing Student</h2>
+
+                    <p class="hero-description">
+                        I am a student at Universiti Malaysia Sarawak (UNIMAS)
+                        who enjoys learning about programming, web design,
+                        and creative technology.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary">Discover More</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
                 </div>
 
-                <p class="small-note">Always improving, always learning.</p>
-            </div>
-
-            <div class="hero-card">
-                <div class="profile-symbol">✦</div>
-                <p class="profile-label">A LITTLE INTRODUCTION</p>
-                <h3>[Najwatul Fadilah Jonaidi]</h3>
-                <p>University Student</p>
-                <div class="profile-line"></div>
-                <p class="profile-message">
-                    Curious mind. Growing skills. New possibilities.
-                </p>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="section-container section-block">
-            <p class="eyebrow">GET TO KNOW ME</p>
-            <h2 class="section-title">About Me</h2>
-
-            <div class="about-card">
-                <div class="section-number">01</div>
-                <div>
-                    <h3>A little about who I am</h3>
-                    <p>
-                        Hi! I'm [Najwatul Fadilah Jonaidi], a multimedia computing student who enjoys
-                        learning new things and developing useful skills.
-                        Throughout my studies, I have had opportunities to
-                        work on assignments, explore technology and
-                        collaborate with other students.
-                    </p>
-                    <p>
-                        I believe that every project is a chance to improve.
-                        My goal is to gain more knowledge, build my confidence
-                        and prepare myself for future career opportunities.
-                    </p>
+                <div class="hero-decoration">
+                    <div class="profile-circle">
+                        <span class="profile-icon">✦</span>
+                        <p>Learn</p>
+                        <p>Create</p>
+                        <p>Grow</p>
+                    </div>
+                    <span class="floating-star star-one">✦</span>
+                    <span class="floating-star star-two">✧</span>
+                    <span class="floating-star star-three">✦</span>
                 </div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section id="skills" class="section-container section-block">
-            <p class="eyebrow">WHAT I'M DEVELOPING</p>
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-intro">
-                Here are some of the skills I use and continue to develop
-                through my studies and projects.
-            </p>
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">GET TO KNOW ME</p>
+                    <h2>About <span>Me</span></h2>
+                    <p>A little introduction about myself and my interests.</p>
+                </div>
 
-            <div class="card-grid">
-                <article class="info-card">
-                    <span class="card-icon">01</span>
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li>HTML and CSS</li>
-                        <li>C++ programming</li>
-                        <li>Basic web development</li>
-                        <li>Microsoft Office</li>
-                    </ul>
-                </article>
+                <div class="about-card">
+                    <div class="about-icon">♡</div>
 
-                <article class="info-card">
-                    <span class="card-icon">02</span>
-                    <h3>Personal Skills</h3>
-                    <ul>
-                        <li>Communication</li>
-                        <li>Teamwork</li>
-                        <li>Time management</li>
-                        <li>Problem solving</li>
-                    </ul>
-                </article>
+                    <div class="about-text">
+                        <h3>Who Am I?</h3>
 
-                <article class="info-card">
-                    <span class="card-icon">03</span>
-                    <h3>Areas of Interest</h3>
-                    <ul>
-                        <li>Technology</li>
-                        <li>Website design</li>
-                        <li>Creative problem solving</li>
-                        <li>Continuous learning</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="section-container section-block">
-            <p class="eyebrow">A COLLECTION OF MY WORK</p>
-            <h2 class="section-title">Academic Projects</h2>
-            <p class="section-intro">
-                A selection of projects and assignments from my learning journey.
-                Replace these examples with your actual completed work.
-            </p>
-
-            <div class="card-grid">
-                <article class="project-card">
-                    <div class="project-top">
-                        <span>PROJECT 01</span>
-                        <span class="project-mark">◇</span>
-                    </div>
-                    <h3>Personal Portfolio Website</h3>
-                    <p>
-                        A website designed to introduce myself and present
-                        my skills, educational background and projects.
-                    </p>
-                    <div class="tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-top">
-                        <span>PROJECT 02</span>
-                        <span class="project-mark">⌘</span>
-                    </div>
-                    <h3>Programming Assignment</h3>
-                    <p>
-                        An academic programming task that helps me practise
-                        logical thinking, coding and problem solving.
-                    </p>
-                    <div class="tags">
-                        <span>C++</span>
-                        <span>Programming</span>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-top">
-                        <span>PROJECT 03</span>
-                        <span class="project-mark">✧</span>
-                    </div>
-                    <h3>UI/UX Design Project</h3>
-                    <p>
-                        A user interface design concept focused on making
-                        digital experiences easier and more convenient to use.
-                    </p>
-                    <div class="tags">
-                        <span>Figma</span>
-                        <span>UI/UX</span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education" class="section-container section-block">
-            <p class="eyebrow">MY LEARNING JOURNEY</p>
-            <h2 class="section-title">Education</h2>
-
-            <div class="timeline">
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <p class="timeline-label">CURRENT</p>
-                        <h3>[Your University Name]</h3>
-                        <p>[Your Course or Programme]</p>
                         <p>
-                            Currently developing my knowledge through
-                            lectures, practical exercises, group assignments
-                            and academic projects.
+                            Hi! My name is Najwatul Fadilah Jonaidi, and I am
+                            a Multimedia Computing student at Universiti
+                            Malaysia Sarawak (UNIMAS).
+                        </p>
+
+                        <p>
+                            I am interested in Computer Science because I want
+                            to understand how technology works and how
+                            programming can be used to solve real-life problems.
+                            I am also interested in creating websites that are
+                            creative, useful, and easy to use.
+                        </p>
+
+                        <p>
+                            I created this portfolio to introduce myself,
+                            showcase my skills, and share my academic projects
+                            and learning progress. It also gives me a place to
+                            document my improvement as I gain more knowledge
+                            and experience.
                         </p>
                     </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <p class="timeline-label">PREVIOUS EDUCATION</p>
-                        <h3>[SMK Elopura Dua, Sandakan, Sabah]</h3>
-                        <p>[Qualification and Year]</p>
-                        <p>
-                            Add a short description of your previous
-                            education here.
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Achievements -->
-        <section id="achievements" class="section-container section-block">
-            <p class="eyebrow">MILESTONES AND PROGRESS</p>
-            <h2 class="section-title">Achievements</h2>
-
-            <div class="about-card achievement-card">
-                <div class="section-number">✦</div>
-                <div>
-                    <h3>Things I'm proud of</h3>
-                    <p>
-                        Use this section to highlight real achievements,
-                        certificates, workshops, competitions or university
-                        activities that you have participated in.
-                    </p>
-                    <ul>
-                        <li>[Achievement or certificate 1]</li>
-                        <li>[Achievement or certificate 2]</li>
-                        <li>[Workshop or activity]</li>
-                    </ul>
-                    <p class="small-note">
-                        Only include achievements that you have actually earned.
-                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="section-container section-block">
-            <div class="contact-panel">
-                <p class="eyebrow">LET'S CONNECT</p>
-                <h2 class="section-title">Get in Touch</h2>
-                <p>
-                    Thank you for taking the time to explore my portfolio.
-                    Feel free to contact me about my projects or academic work.
-                </p>
+        <!-- My Skills Section -->
+        <section id="skills" class="section section-tinted">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">WHAT I CAN DO</p>
+                    <h2>My <span>Skills</span></h2>
+                    <p>Skills I am learning and developing throughout my studies.</p>
+                </div>
 
-                <a class="button button-primary"
-                   href="mailto:fadilahnajwatul@gmailcom">
-                    Email Me
-                </a>
+                <div class="skills-grid">
+                    <article class="card skill-card">
+                        <div class="card-icon">⌘</div>
+                        <h3>Technical Skills</h3>
+                        <p class="card-description">
+                            Technical knowledge that I develop through
+                            learning and practice.
+                        </p>
 
-                <p class="contact-detail">
-                    Email: fadilahnajwatul@gmail.com
-                </p>
-                <p class="contact-detail">
-                    GitHub:
-                    <a href="https://njwtlfdlh.github.io/my-portfolio/ target="_blank"
-                       rel="noopener noreferrer">My GitHub Profile</a>
-                </p>
+                        <div class="skill-tags">
+                            <span>HTML</span>
+                            <span>C++</span>
+                            <span>C</span>
+                            <span>JavaScript</span>
+                            <span>Web Design</span>
+                            <span>Python</span>
+                        </div>
+                    </article>
+
+                    <article class="card skill-card">
+                        <div class="card-icon">✧</div>
+                        <h3>Personal Skills</h3>
+                        <p class="card-description">
+                            Personal qualities that help me work with others
+                            and approach challenges.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Teamwork</span>
+                            <span>Communication</span>
+                            <span>Creativity</span>
+                            <span>Problem Solving</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">MY LEARNING JOURNEY</p>
+                    <h2>My <span>Education</span></h2>
+                    <p>My educational background and current learning journey.</p>
+                </div>
+
+                <div class="education-list">
+                    <article class="card education-card">
+                        <div class="education-marker">01</div>
+                        <div>
+                            <p class="education-label">CURRENT STUDIES</p>
+                            <h3>Universiti Malaysia Sarawak (UNIMAS)</h3>
+                            <p class="education-course">Multimedia Computing</p>
+
+                            <p>
+                                I am developing my knowledge and skills in
+                                computing, programming, and multimedia.
+                                My studies help me understand how technology
+                                can be used to create practical digital solutions.
+                            </p>
+
+                            <h4>What I Am Learning</h4>
+                            <ul class="learning-list">
+                                <li>Web development using HTML, CSS, and JavaScript</li>
+                                <li>Programming fundamentals using C and C++</li>
+                                <li>Python programming fundamentals</li>
+                                <li>Web design and user interface design</li>
+                                <li>Problem-solving and computational thinking</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card education-card">
+                        <div class="education-marker">02</div>
+                        <div>
+                            <p class="education-label">PREVIOUS EDUCATION</p>
+                            <h3>SMK Elopura Dua</h3>
+                            <p class="education-course">SPM · 2021</p>
+                            <p>
+                                Completed my Sijil Pelajaran Malaysia (SPM)
+                                in 2021.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section section-tinted">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">MY PROGRESS</p>
+                    <h2>Academic <span>Achievements</span></h2>
+                    <p>Every learning experience is a step towards improvement.</p>
+                </div>
+
+                <div class="card achievement-card">
+                    <div class="achievement-icon">✧</div>
+                    <h3>Currently Building My Experience</h3>
+
+                    <p>
+                        I am currently developing my knowledge and skills
+                        through academic projects, assignments, and continuous
+                        learning. Although I do not have specific academic
+                        achievements to list here yet, I look forward to
+                        updating this section with future achievements,
+                        certificates, and experiences as I progress in my studies.
+                    </p>
+
+                    <span class="status-label">More to come</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">LET'S CONNECT</p>
+                    <h2>Contact <span>Me</span></h2>
+                    <p>Feel free to reach out or explore my work online.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <a class="card contact-card"
+                       href="mailto:fadilahnajwatul@gmail.com">
+                        <div class="card-icon">✉</div>
+                        <h3>Email Me</h3>
+                        <p>fadilahnajwatul@gmail.com</p>
+                        <span class="contact-link">Send an email →</span>
+                    </a>
+
+                    <a class="card contact-card"
+                       href="https://github.com/njwtlfdlh"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <div class="card-icon">⌘</div>
+                        <h3>Visit My GitHub</h3>
+                        <p>Explore my repositories and projects.</p>
+                        <span class="contact-link">View GitHub →</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <p>Designed and created by [Your Name].</p>
-        <p>© 2026 My Portfolio · Made with care.</p>
-        <a href="#home">Back to top ↑</a>
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#home" class="logo footer-logo">My<span>Portfolio.</span></a>
+            <p>Designed and created by Najwatul Fadilah Jonaidi.</p>
+            <p class="copyright">
+                &copy; 2026 Najwatul Fadilah Jonaidi. All rights reserved.
+            </p>
+        </div>
     </footer>
-
-    <script>
-        const themeToggle = document.getElementById("theme-toggle");
-
-        themeToggle.addEventListener("click", function () {
-            const isDark = document.body.classList.toggle("dark-mode");
-
-            themeToggle.textContent = isDark ? "☀" : "☾";
-            themeToggle.setAttribute(
-                "aria-label",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
-        });
-    </script>
-
 </body>
 </html>
-
-
