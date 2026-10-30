@@ -1,424 +1,142 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Student portfolio of Najwatul Fadilah Jonaidi, a Multimedia Computing student at UNIMAS.">
-    <title>Najwatul Fadilah | My Portfolio</title>
+
+    <meta name="description" content="Najwatul Fadilah's personal portfolio website">
+
+    <title>Najwatul Fadilah | Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Navigation -->
-    <header class="header" id="top">
-        <nav class="navbar container">
-            <a href="#home" class="logo">My<span>Portfolio.</span></a>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Najwatul.</h2>
 
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About Me</a>
-                <a href="#skills">My Skills</a>
-                <a href="#education">Education</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#contact">Contact</a>
-            </div>
-
-            <div class="nav-tools">
-                <div class="clock-box">
-                    <span class="clock-icon">🕒</span>
-                    <div>
-                        <span id="current-date">Loading date...</span>
-                        <strong id="current-time">Loading time...</strong>
-                    </div>
-                </div>
-
-                <button id="theme-toggle" class="theme-toggle"
-                        type="button" aria-label="Switch to dark mode">
-                    🌙 Dark Mode
-                </button>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
+    <!-- Home Section -->
     <main>
-        <!-- Home -->
         <section id="home" class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
 
-                    <h1>Hello, I'm <span>Najwatul Fadilah Jonaidi</span></h1>
+            <div class="hero-content">
+                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-                    <h2>Multimedia Computing Student</h2>
+                <h1>Hello, I'm <span>Najwatul Fadilah</span></h1>
 
-                    <p id="greeting-message" class="greeting-message">
-                        Welcome to my portfolio!
-                    </p>
+                <h3>Multimedia Computing Student</h3>
 
-                    <p class="hero-description">
-                        I am a student at Universiti Malaysia Sarawak (UNIMAS).
-                        I enjoy learning about programming, web design,
-                        and creative technology.
-                    </p>
+                <p>
+                    I am a university student at UNIMAS
+                    who is interested in technology,
+                    creative design and web development.
+                </p>
 
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn btn-primary">Discover More</a>
-                        <a href="#contact" class="btn btn-outline">Contact Me</a>
-                    </div>
-                </div>
-
-                <div class="hero-decoration">
-                    <div class="profile-circle">
-                        <span class="profile-icon">✦</span>
-                        <p>LEARN</p>
-                        <p>CREATE</p>
-                        <p>GROW</p>
-                    </div>
-                    <span class="floating-star star-one">✦</span>
-                    <span class="floating-star star-two">✧</span>
-                    <span class="floating-star star-three">✦</span>
-                </div>
+                <a href="#projects" class="btn">Explore My Work</a>
             </div>
+
         </section>
 
-        <!-- About Me -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">GET TO KNOW ME</p>
-                    <h2>About <span>Me</span></h2>
-                    <p>A little introduction about myself and my interests.</p>
-                </div>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>About Me</h2>
 
-                <div class="about-card">
-                    <div class="about-icon">♡</div>
+            <p>
+                My name is Najwatul Fadilah binti Jonaidi.
+                I am currently studying Multimedia Computing
+                at Universiti Malaysia Sarawak (UNIMAS).
 
-                    <div class="about-text">
-                        <h3>Who Am I?</h3>
-
-                        <div id="about-details">
-                            <p>
-                                Hi! My name is Najwatul Fadilah Jonaidi,
-                                and I am a Multimedia Computing student at
-                                Universiti Malaysia Sarawak (UNIMAS).
-                            </p>
-
-                            <p>
-                                I am interested in Computer Science because
-                                I want to understand how technology works
-                                and how programming can solve real-life
-                                problems. I am also interested in creating
-                                websites that are creative, useful, and easy
-                                to use.
-                            </p>
-
-                            <p>
-                                I created this portfolio to introduce myself,
-                                showcase my skills, and share my academic
-                                projects and learning progress. I hope to
-                                improve my knowledge and gain more experience
-                                throughout my studies.
-                            </p>
-                        </div>
-
-                        <button id="about-toggle" class="btn btn-outline"
-                                type="button" aria-expanded="true">
-                            Show Less
-                        </button>
-                    </div>
-                </div>
-            </div>
+               I am passionate about exploring a technology,
+               learning new skills, and creating meaningful digital
+               project through my university studies.
+            </p>
         </section>
 
-        <!-- Skills -->
-        <section id="skills" class="section section-tinted">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">WHAT I AM LEARNING</p>
-                    <h2>My <span>Skills</span></h2>
-                    <p>Skills that I continue to develop through practice.</p>
-                </div>
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2>My Projects</h2>
 
-                <div class="skills-grid">
-                    <article class="card skill-card">
-                        <div class="card-icon">⌘</div>
-                        <h3>Technical Skills</h3>
-                        <p>
-                            My technical skills help me learn programming
-                            and create digital projects.
-                        </p>
+            <div class="project-container">
 
-                        <div class="skill-tags">
-                            <span>HTML</span>
-                            <span>C++</span>
-                            <span>C</span>
-                            <span>JavaScript</span>
-                            <span>Web Design</span>
-                            <span>Python</span>
-                        </div>
-                    </article>
-
-                    <article class="card skill-card">
-                        <div class="card-icon">✧</div>
-                        <h3>Personal Skills</h3>
-                        <p>
-                            These skills help me collaborate with others
-                            and approach tasks positively.
-                        </p>
-
-                        <div class="skill-tags">
-                            <span>Teamwork</span>
-                            <span>Communication</span>
-                            <span>Creativity</span>
-                            <span>Problem Solving</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education" class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">MY LEARNING JOURNEY</p>
-                    <h2>My <span>Education</span></h2>
-                    <p>My educational background and current studies.</p>
-                </div>
-
-                <div class="education-list">
-                    <article class="card education-card">
-                        <div class="education-marker">01</div>
-
-                        <div>
-                            <p class="education-label">CURRENT STUDIES</p>
-                            <h3>Universiti Malaysia Sarawak (UNIMAS)</h3>
-                            <p class="education-course">Multimedia Computing</p>
-
-                            <p>
-                                I am developing my knowledge in computing,
-                                programming, and multimedia. My studies help
-                                me understand how technology can be used to
-                                create useful digital solutions.
-                            </p>
-
-                            <h4>What I Am Learning</h4>
-                            <ul class="learning-list">
-                                <li>Web development using HTML, CSS, and JavaScript</li>
-                                <li>Programming fundamentals using C and C++</li>
-                                <li>Python programming fundamentals</li>
-                                <li>Web design and user interface design</li>
-                                <li>Problem-solving and computational thinking</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="card education-card">
-                        <div class="education-marker">02</div>
-
-                        <div>
-                            <p class="education-label">PREVIOUS EDUCATION</p>
-                            <h3>SMK Elopura Dua</h3>
-                            <p class="education-course">SPM · 2021</p>
-                            <p>
-                                Completed my Sijil Pelajaran Malaysia (SPM)
-                                in 2021.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements -->
-        <section id="achievements" class="section section-tinted">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">MY PROGRESS</p>
-                    <h2>Academic <span>Achievements</span></h2>
-                    <p>Every learning experience is a step forward.</p>
-                </div>
-
-                <article class="card achievement-card">
-                    <div class="achievement-icon">✧</div>
-
-                    <h3>Currently Building My Experience</h3>
-
+                <div class="project-card">
+                    <h3>Deepfake Detective</h3>
                     <p>
-                        I am currently developing my knowledge and skills
-                        through academic projects, assignments, and continuous
-                        learning. I do not have specific academic achievements
-                        to list here yet, but I will update this section with
-                        future achievements, certificates, and experiences
-                        as I progress in my studies.
+                        A computer game project about identifying
+                        manipulated images and misinformation.
                     </p>
+                </div>
 
-                    <span class="status-label">More to come</span>
-                </article>
+                <div class="project-card">
+                    <h3>SHAA Database System</h3>
+                    <p>
+                        A Sarawak Heritage Online Auction
+                        database project.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Campus Guide App</h3>
+                    <p>
+                        An Android application designed to
+                        help users explore campus venues.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>KUTS Mobile App</h3>
+                    <p>
+                        A mobile application UI/UX design
+                        for Kuching Urban Transportation System.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A personal website developed using
+                        HTML, CSS and JavaScript.
+                    </p>
+                </div>
+
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">LET'S CONNECT</p>
-                    <h2>Contact <span>Me</span></h2>
-                    <p>Feel free to email me or visit my GitHub profile.</p>
-                </div>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
 
-                <div class="contact-grid">
-                    <a class="card contact-card"
-                       href="mailto:fadilahnajwatul@gmail.com">
-                        <div class="card-icon">✉</div>
-                        <h3>Email Me</h3>
-                        <p>fadilahnajwatul@gmail.com</p>
-                        <span class="contact-link">Send an email →</span>
-                    </a>
+            <p>Thank you for visiting my portfolio!</p>
 
-                    <a class="card contact-card"
-                       href="https://github.com/njwtlfdlh"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        <div class="card-icon">⌘</div>
-                        <h3>Visit My GitHub</h3>
-                        <p>Explore my repositories and projects.</p>
-                        <span class="contact-link">View GitHub →</span>
-                    </a>
-                </div>
-            </div>
+            <p>
+                Email:
+                <a href="mailto:fadilahnajwatul@gmail.com">
+                    fadilahnajwatul@gmail.com
+                </a>
+            </p>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <a href="#home" class="logo footer-logo">My<span>Portfolio.</span></a>
-            <p>Designed and created by Najwatul Fadilah Jonaidi.</p>
-            <p class="copyright">
-                &copy; 2026 Najwatul Fadilah Jonaidi. All rights reserved.
-            </p>
-        </div>
+    <footer>
+        <p>&copy; 2026 Najwatul Fadilah. All Rights Reserved.</p>
     </footer>
 
-    <!-- Back to Top -->
-    <button id="back-to-top" type="button"
-            aria-label="Back to top" title="Back to top">
-        ↑
-    </button>
-
-    <!-- Five JavaScript Functions -->
-    <script>
-        // 1. CURRENT TIME
-        const dateDisplay = document.getElementById("current-date");
-        const timeDisplay = document.getElementById("current-time");
-
-        function updateClock() {
-            const now = new Date();
-
-            dateDisplay.textContent = new Intl.DateTimeFormat("en-MY", {
-                timeZone: "Asia/Kuala_Lumpur",
-                weekday: "short",
-                day: "2-digit",
-                month: "short",
-                year: "numeric"
-            }).format(now);
-
-            timeDisplay.textContent = new Intl.DateTimeFormat("en-MY", {
-                timeZone: "Asia/Kuala_Lumpur",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                hour12: true
-            }).format(now);
-        }
-
-        updateClock();
-        setInterval(updateClock, 1000);
-
-
-        // 2. DARK MODE TOGGLE
-        const themeToggle = document.getElementById("theme-toggle");
-
-        themeToggle.addEventListener("click", function () {
-            const isDark = document.body.classList.toggle("dark-mode");
-
-            themeToggle.textContent = isDark
-                ? "☀️ Light Mode"
-                : "🌙 Dark Mode";
-
-            themeToggle.setAttribute(
-                "aria-label",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
-        });
-
-
-        // 3. SHOW / HIDE ABOUT ME
-        const aboutToggle = document.getElementById("about-toggle");
-        const aboutDetails = document.getElementById("about-details");
-
-        aboutToggle.addEventListener("click", function () {
-            const isCurrentlyVisible = !aboutDetails.hidden;
-
-            aboutDetails.hidden = isCurrentlyVisible;
-            aboutToggle.textContent = isCurrentlyVisible
-                ? "Show More"
-                : "Show Less";
-
-            aboutToggle.setAttribute(
-                "aria-expanded",
-                String(!isCurrentlyVisible)
-            );
-        });
-
-
-        // 4. GREETING MESSAGE
-        const greetingMessage = document.getElementById("greeting-message");
-
-        function updateGreeting() {
-            const hour = Number(
-                new Intl.DateTimeFormat("en-MY", {
-                    timeZone: "Asia/Kuala_Lumpur",
-                    hour: "numeric",
-                    hour12: false
-                }).format(new Date())
-            );
-
-            if (hour >= 5 && hour < 12) {
-                greetingMessage.textContent =
-                    "Good morning! Welcome to my portfolio.";
-            } else if (hour >= 12 && hour < 18) {
-                greetingMessage.textContent =
-                    "Good afternoon! Welcome to my portfolio.";
-            } else {
-                greetingMessage.textContent =
-                    "Good evening! Welcome to my portfolio.";
-            }
-        }
-
-        updateGreeting();
-
-
-        // 5. BACK TO TOP
-        const backToTop = document.getElementById("back-to-top");
-
-        window.addEventListener("scroll", function () {
-            if (window.scrollY > 300) {
-                backToTop.classList.add("visible");
-            } else {
-                backToTop.classList.remove("visible");
-            }
-        });
-
-        backToTop.addEventListener("click", function () {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
