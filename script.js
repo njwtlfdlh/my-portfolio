@@ -1,154 +1,267 @@
-// ============================================================
-// NAJWATUL FADILAH PORTFOLIO SCRIPT
-// ============================================================
-(function () {
-  'use strict';
+/* =========================================================
+   MATCHA & STRAWBERRY THEME
+   ========================================================= */
 
-  // ---------- 1. MOBILE MENU TOGGLE ----------
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+/* ---------- Reset & Variables ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('show');
-    });
+:root {
+    /* Matcha */
+    --matcha-light: #e8f0e3;
+    --matcha: #8ba888;
+    --matcha-dark: #6b8a68;
+    
+    /* Strawberry */
+    --strawberry-light: #fce8ec;
+    --strawberry: #e89ba8;
+    --strawberry-dark: #d17d8c;
 
-    // Tutup menu bila link diklik (di mobile)
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          navLinks.classList.remove('show');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  }
+    /* UI Colors */
+    --bg: #fdfaf6;
+    --card-bg: #ffffff;
+    --text-main: #3a3a3a;
+    --text-muted: #7a7a7a;
+    --border: #f0e6e0;
+}
 
-  // ---------- 2. SMOOTH SCROLLING (Fallback untuk browser lama) ----------
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+/* Dark Mode Overrides */
+body.dark {
+    --bg: #1a1c19;
+    --card-bg: #262a25;
+    --text-main: #e0e6df;
+    --text-muted: #9ba89a;
+    --border: #3b4239;
+    
+    --matcha-light: #2a3328;
+    --matcha-dark: #a3c49e;
+    --strawberry-light: #3d2a2e;
+    --strawberry-dark: #f0b0be;
+}
 
-  // ---------- 3. ACTIVE NAV HIGHLIGHT ----------
-  const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY + 120; // Offset untuk navbar
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+}
 
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      if (scrollPos >= top && scrollPos < bottom) {
-        current = section.id;
-      }
-    });
+/* ---------- Accessibility ---------- */
+.skip-link {
+    position: absolute; top: -60px; left: 1rem;
+    background: var(--matcha-dark); color: #fff;
+    padding: 0.5rem 1rem; border-radius: 4px;
+    z-index: 999; text-decoration: none;
+}
+.skip-link:focus { top: 0.5rem; }
 
-    navItems.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === `#${current}`) {
-        a.classList.add('active');
-      }
-    });
-  });
+a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--strawberry-dark);
+    outline-offset: 3px;
+}
 
-  // ---------- 4. DYNAMIC FOOTER YEAR ----------
-  const footerText = document.getElementById('footerText');
-  if (footerText) {
-    const year = new Date().getFullYear();
-    footerText.innerHTML = `© ${year} Najwatul Fadilah · Built with HTML, CSS &amp; JS`;
-  }
+/* ---------- Scroll Progress Bar ---------- */
+#progressBar {
+    position: fixed; top: 0; left: 0;
+    height: 4px; width: 0;
+    background: var(--strawberry);
+    z-index: 1000;
+    transition: width 0.1s linear;
+}
 
-  // ---------- 5. DARK MODE TOGGLE (with LocalStorage) ----------
-  const themeToggle = document.getElementById('themeToggle');
-  const htmlEl = document.documentElement;
+/* ---------- Header ---------- */
+.site-header {
+    background: var(--matcha-light);
+    padding: 25px 8%;
+    text-align: center;
+    position: relative;
+    transition: background 0.3s;
+}
 
-  function updateIcon(isDark) {
-    if (themeToggle) {
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
-      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+.logo {
+    color: var(--matcha-dark);
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+nav ul.nav-menu {
+    list-style: none; padding: 0;
+    display: flex; flex-wrap: wrap;
+    justify-content: center; align-items: center;
+    gap: 6px 12px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover, nav a.is-active {
+    color: #fff;
+    background: var(--strawberry-dark);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+    display: inline-block;
+    background: var(--matcha-dark);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+.button:hover { background: var(--strawberry-dark); transform: translateY(-2px); }
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--strawberry-dark);
+    color: var(--strawberry-dark);
+}
+.btn-outline:hover { background: var(--strawberry-dark); color: #fff; }
+
+/* ---------- Hero ---------- */
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+    background: linear-gradient(135deg, var(--matcha-light), var(--strawberry-light));
+    transition: background 0.3s;
+}
+
+.hero h1 { font-size: 36px; color: var(--text-main); margin-bottom: 15px; }
+.hero p { max-width: 650px; margin: 0 auto 20px; color: var(--text-muted); }
+
+#clock {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--matcha-dark);
+}
+
+/* ---------- Sections & Cards ---------- */
+section { padding: 50px 8%; max-width: 1100px; margin: auto; }
+
+section h2 {
+    text-align: center;
+    color: var(--matcha-dark);
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--strawberry);
+    box-shadow: 0 8px 20px rgba(232, 155, 168, 0.2);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ---------- Tags & Lists ---------- */
+.tag {
+    display: inline-block;
+    background: var(--strawberry-light);
+    color: var(--strawberry-dark);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.project h3 { color: var(--matcha-dark); margin-bottom: 10px; font-size: 1.2rem; }
+
+.achievements-list { padding-left: 1.5rem; margin-top: 10px; }
+.achievements-list li { margin-bottom: 6px; color: var(--text-muted); }
+
+/* ---------- Contact ---------- */
+.email-link {
+    color: var(--strawberry-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    background: var(--matcha-light);
+    padding: 20px;
+    color: var(--matcha-dark);
+    margin-top: 40px;
+    transition: background 0.3s;
+}
+
+/* ---------- Responsive & Mobile Menu ---------- */
+@media (max-width: 700px) {
+    .logo { font-size: 22px; }
+    
+    .nav-toggle {
+        display: block;
+        background: transparent;
+        border: 2px solid var(--strawberry-dark);
+        color: var(--strawberry-dark);
+        padding: 6px 14px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 0 auto 10px;
     }
-  }
 
-  // Semak tema yang disimpan
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    htmlEl.setAttribute('data-theme', 'dark');
-    updateIcon(true);
-  } else if (!savedTheme) {
-    // Auto-detect ikut waktu (7 malam - 7 pagi)
-    const hour = new Date().getHours();
-    if (hour >= 19 || hour < 7) {
-      htmlEl.setAttribute('data-theme', 'dark');
-      updateIcon(true);
+    nav ul.nav-menu {
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        transition: max-height 0.35s ease;
+        gap: 0;
     }
-  }
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = htmlEl.getAttribute('data-theme') === 'dark';
-      
-      if (isDark) {
-        htmlEl.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-        updateIcon(false);
-      } else {
-        htmlEl.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        updateIcon(true);
-      }
-    });
-  }
-
-  // ---------- 6. LIVE CURRENT TIME ----------
-  const timeElement = document.getElementById('currentTime');
-
-  function updateTime() {
-    if (!timeElement) return;
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    timeElement.textContent = `${hours}:${minutes}:${seconds}`;
-  }
-  
-  updateTime();
-  setInterval(updateTime, 1000); // Update setiap 1 saat
-
-  // ---------- 7. SCROLL TO TOP BUTTON ----------
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-  if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        scrollTopBtn.classList.add('visible');
-      } else {
-        scrollTopBtn.classList.remove('visible');
-      }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // ---------- 8. RESIZE HANDLER ----------
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('show')) {
-      navLinks.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
+    nav ul.nav-menu.is-open {
+        max-height: 500px;
+        padding-bottom: 10px;
     }
-  });
 
-})();
+    nav ul.nav-menu li { width: 100%; display: block; }
+    nav a { display: block; padding: 10px; }
+    
+    .hero h1 { font-size: 28px; }
+    section { padding: 35px 6%; }
+}
+
+@media (min-width: 701px) {
+    .nav-toggle { display: none; }
+}
