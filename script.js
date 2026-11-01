@@ -1,146 +1,154 @@
-// =====================================
-// 4. READING PROGRESS BAR
-// =====================================
+// ============================================================
+// NAJWATUL FADILAH PORTFOLIO SCRIPT
+// ============================================================
+(function () {
+  'use strict';
 
-const progressBar = document.createElement("div");
+  // ---------- 1. MOBILE MENU TOGGLE ----------
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
-progressBar.id = "progressBar";
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('show');
+    });
 
-prog/* ==========================================
-   script.js — Matcha & Strawberry Portfolio
-   ========================================== */
-
-// ===== 1. ACTIVE NAV LINK =====
-// Highlights the current page in the navbar
-document.addEventListener('DOMContentLoaded', () => {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('nav a');
-
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
-      link.classList.add('active');
-    }
-  });
-});
-
-// ===== 2. SCROLL REVEAL =====
-// Fades in elements as you scroll down
-const revealElements = document.querySelectorAll(
-  '.project-card, .skill-item, .about-content, .section-title'
-);
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-revealElements.forEach(el => {
-  el.classList.add('reveal');
-  revealObserver.observe(el);
-});
-
-// ===== 3. TYPING EFFECT (Hero) =====
-// Optional: only runs if #typed-text exists on the page
-const typedEl = document.getElementById('typed-text');
-if (typedEl) {
-  const phrases = [
-    'multimedia.',
-    'web development.',
-    'digital creativity.',
-    'learning new things.'
-  ];
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function type() {
-    const current = phrases[phraseIndex];
-
-    if (isDeleting) {
-      typedEl.textContent = current.substring(0, charIndex--);
-    } else {
-      typedEl.textContent = current.substring(0, charIndex++);
-    }
-
-    let speed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === current.length + 1) {
-      speed = 1500; // pause at end
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      speed = 400;
-    }
-
-    setTimeout(type, speed);
+    // Tutup menu bila link diklik (di mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('show');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   }
 
-  type();
-}
+  // ---------- 2. SMOOTH SCROLLING (Fallback untuk browser lama) ----------
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 
-// ===== 4. SMOOTH SCROLL =====
-// For in-page anchor links like <a href="#projects">
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // ---------- 3. ACTIVE NAV HIGHLIGHT ----------
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.scrollY + 120; // Offset untuk navbar
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      if (scrollPos >= top && scrollPos < bottom) {
+        current = section.id;
+      }
+    });
+
+    navItems.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === `#${current}`) {
+        a.classList.add('active');
+      }
+    });
+  });
+
+  // ---------- 4. DYNAMIC FOOTER YEAR ----------
+  const footerText = document.getElementById('footerText');
+  if (footerText) {
+    const year = new Date().getFullYear();
+    footerText.innerHTML = `© ${year} Najwatul Fadilah · Built with HTML, CSS &amp; JS`;
+  }
+
+  // ---------- 5. DARK MODE TOGGLE (with LocalStorage) ----------
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+
+  function updateIcon(isDark) {
+    if (themeToggle) {
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  }
+
+  // Semak tema yang disimpan
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    htmlEl.setAttribute('data-theme', 'dark');
+    updateIcon(true);
+  } else if (!savedTheme) {
+    // Auto-detect ikut waktu (7 malam - 7 pagi)
+    const hour = new Date().getHours();
+    if (hour >= 19 || hour < 7) {
+      htmlEl.setAttribute('data-theme', 'dark');
+      updateIcon(true);
+    }
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+      
+      if (isDark) {
+        htmlEl.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        updateIcon(false);
+      } else {
+        htmlEl.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        updateIcon(true);
+      }
+    });
+  }
+
+  // ---------- 6. LIVE CURRENT TIME ----------
+  const timeElement = document.getElementById('currentTime');
+
+  function updateTime() {
+    if (!timeElement) return;
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  
+  updateTime();
+  setInterval(updateTime, 1000); // Update setiap 1 saat
+
+  // ---------- 7. SCROLL TO TOP BUTTON ----------
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ---------- 8. RESIZE HANDLER ----------
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('show')) {
+      navLinks.classList.remove('show');
+      menuToggle.setAttribute('aria-expanded', 'false');
     }
   });
-});
 
-// ===== 5. BACK TO TOP BUTTON =====
-// Creates a floating button that appears on scroll
-const backToTop = document.createElement('button');
-backToTop.textContent = '↑';
-backToTop.className = 'back-to-top';
-backToTop.setAttribute('aria-label', 'Back to top');
-document.body.appendChild(backToTop);
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    backToTop.classList.add('show');
-  } else {
-    backToTop.classList.remove('show');
-  }
-});
-
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});ressBar.style.position = "fixed";
-progressBar.style.top = "0";
-progressBar.style.left = "0";
-progressBar.style.height = "5px";
-progressBar.style.width = "0%";
-progressBar.style.backgroundColor = "#A75F68";
-progressBar.style.zIndex = "9999";
-progressBar.style.transition = "width 0.1s ease";
-
-document.body.appendChild(progressBar);
-
-function updateProgressBar() {
-    const scrollTop = window.scrollY;
-
-    const pageHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-    if (pageHeight > 0) {
-        const progress = (scrollTop / pageHeight) * 100;
-        progressBar.style.width = progress + "%";
-    } else {
-        progressBar.style.width = "100%";
-    }
-}
-
-window.addEventListener("scroll", updateProgressBar);
-window.addEventListener("resize", updateProgressBar);
-
-updateProgressBar();
+})();
