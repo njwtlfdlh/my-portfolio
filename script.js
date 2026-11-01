@@ -1,267 +1,97 @@
-/* =========================================================
-   MATCHA & STRAWBERRY THEME
-   ========================================================= */
+(function () {
+  'use strict';
 
-/* ---------- Reset & Variables ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  // ---------- 1. DARK MODE TOGGLE ----------
+  const themeToggle = document.getElementById('themeToggle');
+  const bodyEl = document.body; 
 
-:root {
-    /* Matcha */
-    --matcha-light: #e8f0e3;
-    --matcha: #8ba888;
-    --matcha-dark: #6b8a68;
-    
-    /* Strawberry */
-    --strawberry-light: #fce8ec;
-    --strawberry: #e89ba8;
-    --strawberry-dark: #d17d8c;
+  // Semak memori (localStorage)
+  if (localStorage.getItem('theme') === 'dark') {
+    bodyEl.classList.add('dark');
+    if (themeToggle) themeToggle.textContent = '☀️';
+  }
 
-    /* UI Colors */
-    --bg: #fdfaf6;
-    --card-bg: #ffffff;
-    --text-main: #3a3a3a;
-    --text-muted: #7a7a7a;
-    --border: #f0e6e0;
-}
+  // Bila butang diklik
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = bodyEl.classList.toggle('dark');
+      
+      if (isDark) {
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️';
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙';
+      }
+    });
+  }
 
-/* Dark Mode Overrides */
-body.dark {
-    --bg: #1a1c19;
-    --card-bg: #262a25;
-    --text-main: #e0e6df;
-    --text-muted: #9ba89a;
-    --border: #3b4239;
-    
-    --matcha-light: #2a3328;
-    --matcha-dark: #a3c49e;
-    --strawberry-light: #3d2a2e;
-    --strawberry-dark: #f0b0be;
-}
+  // ---------- 2. CURRENT TIME (JAM) ----------
+  const clockElement = document.getElementById('clock');
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
+  function updateTime() {
+    if (!clockElement) return;
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const s = String(now.getSeconds()).padStart(2, '0');
+    clockElement.textContent = `Local Time: ${h}:${m}:${s}`;
+  }
+  
+  updateTime();
+  setInterval(updateTime, 1000); // Setiap 1 saat
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text-main);
-    line-height: 1.7;
-    transition: background 0.3s, color 0.3s;
-}
+  // ---------- 3. MOBILE MENU TOGGLE ----------
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
 
-/* ---------- Accessibility ---------- */
-.skip-link {
-    position: absolute; top: -60px; left: 1rem;
-    background: var(--matcha-dark); color: #fff;
-    padding: 0.5rem 1rem; border-radius: 4px;
-    z-index: 999; text-decoration: none;
-}
-.skip-link:focus { top: 0.5rem; }
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('is-open');
+    });
 
-a:focus-visible, button:focus-visible {
-    outline: 3px solid var(--strawberry-dark);
-    outline-offset: 3px;
-}
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 700) {
+          navMenu.classList.remove('is-open');
+        }
+      });
+    });
+  }
 
-/* ---------- Scroll Progress Bar ---------- */
-#progressBar {
-    position: fixed; top: 0; left: 0;
-    height: 4px; width: 0;
-    background: var(--strawberry);
-    z-index: 1000;
-    transition: width 0.1s linear;
-}
+  // ---------- 4. SCROLL PROGRESS BAR & ACTIVE NAV ----------
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  const progressBar = document.getElementById('progressBar');
 
-/* ---------- Header ---------- */
-.site-header {
-    background: var(--matcha-light);
-    padding: 25px 8%;
-    text-align: center;
-    position: relative;
-    transition: background 0.3s;
-}
+  window.addEventListener('scroll', () => {
+    // Progress Bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    if (progressBar) progressBar.style.width = scrollPercent + '%';
 
-.logo {
-    color: var(--matcha-dark);
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 12px;
-}
+    // Active Link
+    let current = '';
+    sections.forEach(section => {
+      if (scrollTop >= section.offsetTop - 120) {
+        current = section.getAttribute('id');
+      }
+    });
 
-nav ul.nav-menu {
-    list-style: none; padding: 0;
-    display: flex; flex-wrap: wrap;
-    justify-content: center; align-items: center;
-    gap: 6px 12px;
-}
+    navLinks.forEach(link => {
+      link.classList.remove('is-active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('is-active');
+      }
+    });
+  });
 
-nav a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 12px;
-    transition: background 0.2s, color 0.2s;
-}
+  // ---------- 5. DYNAMIC YEAR ----------
+  const footerText = document.getElementById('footerText');
+  if (footerText) {
+    const year = new Date().getFullYear();
+    footerText.innerHTML = `© ${year} Najwatul Fadilah · Built with HTML, CSS &amp; JS`;
+  }
 
-nav a:hover, nav a.is-active {
-    color: #fff;
-    background: var(--strawberry-dark);
-}
-
-/* ---------- Buttons ---------- */
-.button {
-    display: inline-block;
-    background: var(--matcha-dark);
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: 600;
-    transition: background 0.2s, transform 0.2s;
-}
-.button:hover { background: var(--strawberry-dark); transform: translateY(-2px); }
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--strawberry-dark);
-    color: var(--strawberry-dark);
-}
-.btn-outline:hover { background: var(--strawberry-dark); color: #fff; }
-
-/* ---------- Hero ---------- */
-.hero {
-    text-align: center;
-    padding: 75px 20px;
-    background: linear-gradient(135deg, var(--matcha-light), var(--strawberry-light));
-    transition: background 0.3s;
-}
-
-.hero h1 { font-size: 36px; color: var(--text-main); margin-bottom: 15px; }
-.hero p { max-width: 650px; margin: 0 auto 20px; color: var(--text-muted); }
-
-#clock {
-    margin-top: 15px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--matcha-dark);
-}
-
-/* ---------- Sections & Cards ---------- */
-section { padding: 50px 8%; max-width: 1100px; margin: auto; }
-
-section h2 {
-    text-align: center;
-    color: var(--matcha-dark);
-    margin-bottom: 25px;
-    font-size: 2rem;
-}
-
-.card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    border: 2px solid var(--border);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    transition: transform 0.3s, border-color 0.3s, background 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    border-color: var(--strawberry);
-    box-shadow: 0 8px 20px rgba(232, 155, 168, 0.2);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-/* ---------- Tags & Lists ---------- */
-.tag {
-    display: inline-block;
-    background: var(--strawberry-light);
-    color: var(--strawberry-dark);
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    font-size: 0.85rem;
-    font-weight: 700;
-}
-
-.project h3 { color: var(--matcha-dark); margin-bottom: 10px; font-size: 1.2rem; }
-
-.achievements-list { padding-left: 1.5rem; margin-top: 10px; }
-.achievements-list li { margin-bottom: 6px; color: var(--text-muted); }
-
-/* ---------- Contact ---------- */
-.email-link {
-    color: var(--strawberry-dark);
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-decoration: underline;
-}
-
-/* ---------- Footer ---------- */
-footer {
-    text-align: center;
-    background: var(--matcha-light);
-    padding: 20px;
-    color: var(--matcha-dark);
-    margin-top: 40px;
-    transition: background 0.3s;
-}
-
-/* ---------- Responsive & Mobile Menu ---------- */
-@media (max-width: 700px) {
-    .logo { font-size: 22px; }
-    
-    .nav-toggle {
-        display: block;
-        background: transparent;
-        border: 2px solid var(--strawberry-dark);
-        color: var(--strawberry-dark);
-        padding: 6px 14px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 8px;
-        cursor: pointer;
-        margin: 0 auto 10px;
-    }
-
-    nav ul.nav-menu {
-        max-height: 0;
-        overflow: hidden;
-        flex-direction: column;
-        transition: max-height 0.35s ease;
-        gap: 0;
-    }
-
-    nav ul.nav-menu.is-open {
-        max-height: 500px;
-        padding-bottom: 10px;
-    }
-
-    nav ul.nav-menu li { width: 100%; display: block; }
-    nav a { display: block; padding: 10px; }
-    
-    .hero h1 { font-size: 28px; }
-    section { padding: 35px 6%; }
-}
-
-@media (min-width: 701px) {
-    .nav-toggle { display: none; }
-}
+})();
