@@ -5,13 +5,13 @@
   const themeToggle = document.getElementById('themeToggle');
   const bodyEl = document.body; 
 
-  // Semak memori (localStorage)
+  // localStorage
   if (localStorage.getItem('theme') === 'dark') {
     bodyEl.classList.add('dark');
     if (themeToggle) themeToggle.textContent = '☀️';
   }
 
-  // Bila butang diklik
+  // when toggle click
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const isDark = bodyEl.classList.toggle('dark');
@@ -26,7 +26,7 @@
     });
   }
 
-  // ---------- 2. CURRENT TIME (JAM) ----------
+  // ---------- 2. CURRENT TIME ----------
   const clockElement = document.getElementById('clock');
 
   function updateTime() {
