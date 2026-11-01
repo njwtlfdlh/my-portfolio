@@ -10,12 +10,12 @@
 }
 
 :root {
-    /* Matcha */
+    /*Colour Green Matcha */
     --matcha-light: #e8f0e3;
     --matcha: #8ba888;
     --matcha-dark: #6b8a68;
     
-    /* Strawberry */
+    /* Colour Green Strawberry */
     --strawberry-light: #fce8ec;
     --strawberry: #e89ba8;
     --strawberry-dark: #d17d8c;
@@ -28,7 +28,7 @@
     --border: #f0e6e0;
 }
 
-/* Dark Mode Overrides */
+/* Dark Mode */
 body.dark {
     --bg: #1a1c19;
     --card-bg: #262a25;
