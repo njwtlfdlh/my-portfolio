@@ -207,7 +207,24 @@ section h2 {
 .achievements-list { padding-left: 1.5rem; margin-top: 10px; }
 .achievements-list li { margin-bottom: 6px; color: var(--text-muted); }
 
-/* ---------- Contact ---------- */
+/* ---------- Contact & Footer ---------- */
+.contact {
+    text-align: center;
+}
+
+.contact-card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left; /* Teks contact ke kiri */
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
 .email-link {
     color: var(--strawberry-dark);
     font-weight: 700;
@@ -215,14 +232,53 @@ section h2 {
     text-decoration: underline;
 }
 
-/* ---------- Footer ---------- */
+/* Butang Copy */
+.copy-btn {
+    background: var(--strawberry);
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.copy-btn:hover {
+    background: var(--strawberry-dark);
+    transform: scale(1.05);
+}
+
+/* Footer Penuh */
 footer {
+    background: var(--matcha-light) !important; 
+    color: var(--matcha-dark) !important;
     text-align: center;
-    background: var(--matcha-light);
-    padding: 20px;
-    color: var(--matcha-dark);
-    margin-top: 40px;
+    padding: 40px 20px;
+    width: 100%;
+    margin-top: 60px;
+    display: block;
     transition: background 0.3s;
+}
+
+body.dark footer {
+    background: var(--matcha) !important;
+    color: #fff !important;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+footer .button {
+    background: var(--strawberry-dark);
+    color: white;
+    border: none;
+}
+footer .button:hover {
+    background: var(--strawberry);
 }
 
 /* ---------- Responsive & Mobile Menu ---------- */
