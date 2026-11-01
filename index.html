@@ -20,9 +20,9 @@
               aria-controls="navLinks">☰</button>
       <ul class="nav-links" id="navLinks" role="list">
         <li><a href="#home">Home</a></li>
-        <li><a href="#About">About</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#Projects"></a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
@@ -48,17 +48,17 @@
       </div>
     </section>
 
-   <!-- ============ ABOUT ============ -->
+    <!-- ============ ABOUT ============ -->
     <section id="about" aria-labelledby="about-heading">
       <div class="container">
         <h2 id="about-heading">About Me</h2>
         <div class="about-content">
           <div class="about-text">
-            <p>Hello! my name is <strong>Najwatul Fadilah</strong>. I am currently pursuig my degree in Bachelor of Computer Science (Multimedia) with Honours at University Malaysia Sarawak (UNIMAS).</p>
-            <p>I am passionate about multimedia, web development and digital creativtiy. I love exploring new technologies and see every new skill as a chance to grow.</p>
-            <p>I create this portfolio to showcase my skills and projects.</p>
+            <p>Hello! My name is <strong>Najwatul Fadilah</strong>. I am currently pursuing my degree in Bachelor of Computer Science (Multimedia) with Honours at University Malaysia Sarawak (UNIMAS).</p>
+            <p>I am passionate about multimedia, web development, and digital creativity. I love exploring new technologies and see every new skill as a chance to grow.</p>
+            <p>I created this portfolio to showcase my skills and projects.</p>
           </div>
-          <div class="about-img" aria-hidden="true"></div>
+          <div class="about-img" aria-hidden="true">NF</div>
         </div>
       </div>
     </section>
@@ -67,39 +67,51 @@
     <section id="projects" aria-labelledby="projects-heading">
       <div class="container">
         <h2 id="projects-heading">My Projects</h2>
-        
+        <p class="section-intro">A selection of projects I've built throughout my studies, ranging from web development to UI/UX design and computer graphics.</p>
 
         <div class="projects-grid">
+          
+          <!-- PROJECT 1 -->
           <article class="project-card">
-            <span class="project-tag"><strong>01. Personal Portfolio Website</strong></span>
-            <h3>Technologies: HTML, CSS, JavaScript</h3>
-            <p>A personal website created using HTML,CSS and JavaScript to introduce myself and present my skill, edoucation and projects.</p>
+            <span class="project-tag">Web Development</span>
+            <h3>01. Personal Portfolio Website</h3>
+            <p>A personal website created using HTML, CSS, and JavaScript to introduce myself and present my skills, education, and projects.</p>
+            <p class="project-tech"><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
           </article>
 
+          <!-- PROJECT 2 -->
           <article class="project-card">
-            <span class="project-tag"> <strong> 02. Sarawak Heritage Online Auction (SHAA) Database System</strong></span>
-            <h3>Technologies: HTML, PHP, MYSQL(phpMyAdmin) , XAMPP</h3>
-            <p>An online auction platform built to digitize the trading of Sarawakian heritage items. The core of the system is a rational database desiged via Crow's Foot ERD and strictly normalized to 3NF to prevent data anomalies. Key functionlities include a secure payment gateaway, automated delivery tracking and real-time bidding records. .</p>
+            <span class="project-tag">Database System</span>
+            <h3>02. Sarawak Heritage Online Auction (SHAA)</h3>
+            <p>An online auction platform built to digitize the trading of Sarawakian heritage items. The core of the system is a relational database designed via Crow's Foot ERD and strictly normalized to 3NF to prevent data anomalies. Key functionalities include a secure payment gateway, automated delivery tracking, and real-time bidding records.</p>
+            <p class="project-tech"><strong>Tech Stack:</strong> HTML, PHP, MySQL (phpMyAdmin), XAMPP</p>
           </article>
 
+          <!-- PROJECT 3 -->
           <article class="project-card">
-            <span class="project-tag"><strong>03. KUTS ART Mobile App - UI/UX Design</strong></span>
-            <h3>Technologies:Figma, UI/UX Design, Protype, Usability Testing</h3>
-            <p>A mobile application protoype built to enhance the public transport experience for the Kuching ART System. Built in Figma, the design features an interactive station routing map, a smart search system, and an inclusive interface for visually impaired users. The user experience was finalized after conducting System Usability Scale (SUS) testing to ensure a smooth ticket booking flow.</p>
+            <span class="project-tag">UI/UX Design</span>
+            <h3>03. KUTS ART Mobile App</h3>
+            <p>A mobile application prototype built to enhance the public transport experience for the Kuching ART System. Built in Figma, the design features an interactive station routing map, a smart search system, and an inclusive interface for visually impaired users. The user experience was finalized after conducting System Usability Scale (SUS) testing to ensure a smooth ticket booking flow.</p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Figma, UI/UX Design, Prototyping, Usability Testing</p>
           </article>
 
+          <!-- PROJECT 4 -->
           <article class="project-card">
-            <span class="project-tag"><strong></strong>04. Interactive Java Quiz System</strong></span>
-            <h3>Technologies: Java, Object-Oriented Programming (OOP), GUI </h3>
-            <p>A funtional desktop quiz application built with Java. It combines a clean Graphical User Interface (GUI) with engaging gamification elements and a reward system. The app features dynamic question handling and uses a file storage manager to keep track of user scores and learning progress.</p>
-            <a href="#" class="project-link">Live demo →</a>
+            <span class="project-tag">Desktop Application</span>
+            <h3>04. Interactive Java Quiz System</h3>
+            <p>A functional desktop quiz application built with Java. It combines a clean Graphical User Interface (GUI) with engaging gamification elements and a reward system. The app features dynamic question handling and uses a file storage manager to keep track of user scores and learning progress.</p>
+            <p class="project-tech"><strong>Tech Stack:</strong> Java, Object-Oriented Programming (OOP), GUI</p>
+            <a href="#" class="project-link">View details →</a>
           </article>
 
+          <!-- PROJECT 5 -->
           <article class="project-card">
-            <span class="project-tag"><strong>05. OpenGL Trash Collector Game</strong></span>
-            <h3>Technologies; C++, OpenGL, Computer Graphics, VS Code</h3>
+            <span class="project-tag">Computer Graphics</span>
+            <h3>05. OpenGL Trash Collector Game</h3>
             <p>A 3D arcade-inspired game built with OpenGL and C++. It features custom polygon rendering, joint-limited character animations, and a two-level scoring system. Players must collect trash to advance through levels.</p>
+            <p class="project-tech"><strong>Tech Stack:</strong> C++, OpenGL, Computer Graphics, VS Code</p>
           </article>
+
         </div>
       </div>
     </section>
@@ -108,18 +120,18 @@
     <section id="skills" aria-labelledby="skills-heading">
       <div class="container">
         <h2 id="skills-heading">My Skills</h2>
-        <p class="section-intro">Technologies and tools I use to build accessible, fast, and maintainable web experiences.</p>
+        <p class="section-intro">Technologies and tools I use to build accessible, fast, and maintainable digital experiences.</p>
 
         <div class="skills-grid">
           <div class="skill-group">
-            <h3>Technical Skills </h3>
+            <h3>Technical Skills</h3>
             <ul class="skill-list">
-              <li>HTML</li>
-              <li>CSS</li>
+              <li>HTML &amp; CSS</li>
               <li>JavaScript</li>
-              <li>C++</li>
+              <li>C++ &amp; Java</li>
+              <li>UI/UX Design</li>
               <li>Web Design</li>
-              <li> UI/UX Design</li>
+              <li>Database (MySQL)</li>
             </ul>
           </div>
 
@@ -148,19 +160,24 @@
             <div class="edu-content">
               <h3>Bachelor of Computer Science (Multimedia) with Honours</h3>
               <p class="edu-meta">University Malaysia Sarawak (UNIMAS) · 2024 – Present</p>
-              <p>Relevant coursework: Web Development, Database Systems, UI/UX Fundamentals. Final project: interactive portfolio website built with pure HTML, CSS, and JavaScript.</p>
+              <p>Relevant coursework: Web Development, Database Systems, UI/UX Fundamentals, Computer Graphics. Final project: interactive portfolio website built with pure HTML, CSS, and JavaScript.</p>
             </div>
           </div>
-        
-           </section>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ CONTACT ============ -->
     <section id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <h2 id="contact-heading">Contact Me</h2>
+        
+        <div class="local-time">
+          <p><strong>Local time:</strong> <span id="currentTime">--:--:--</span></p>
+        </div>
 
         <div class="email-direct">
-          <p>Or email me directly at <a href="mailto:fadilahnajwatul@egmail.com">fadilahnajwatul@example.com</a></p>
+          <p>Email me directly at <a href="mailto:fadilahnajwatul@example.com">fadilahnajwatul@example.com</a></p>
         </div>
       </div>
     </section>
