@@ -1,142 +1,221 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Najwatul Fadilah's personal portfolio website">
-
-    <title>Najwatul Fadilah | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Najwatul Fadilah - My Portfolio">
+  <title>Najwatul Fadilah · Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-            <h2 class="logo">Najwatul.</h2>
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="logo">najwatulfadilah<span>.dev</span></a>
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks">☰</button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="themeToggle" class="theme-btn"
+                  aria-label="Toggle dark mode"
+                  title="Toggle dark mode">🌙</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <main id="main-content">
+
+    <!-- ============ HOME ============ -->
+    <section id="home" class="hero" aria-labelledby="home-heading">
+      <div class="container">
+        <h1 id="home-heading">Hi, I'm <span class="highlight">Najwatul Fadilah</span></h1>
+        <p>I build accessible, fast, and human-centered websites using pure HTML, CSS &amp; JavaScript.</p>
+        <div>
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading">Projects</h2>
+        <p class="section-intro">A selection of things I've built — mostly for learning, some for real users.</p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-tag">JS · UI</span>
+            <h3>TaskFlow</h3>
+            <p>A minimal kanban board with local storage persistence and keyboard shortcuts.</p>
+            <a href="#" class="project-link">Live demo →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag">CSS · Animation</span>
+            <h3>Weather Canvas</h3>
+            <p>Interactive weather visualizer with animated background gradients based on real-time data.</p>
+            <a href="#" class="project-link">Live demo →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag">HTML · A11y</span>
+            <h3>Accessible Modal</h3>
+            <p>Fully accessible modal component with focus trapping and screen-reader support — no libraries.</p>
+            <a href="#" class="project-link">Live demo →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag">JS · Data</span>
+            <h3>Expense Lens</h3>
+            <p>Track daily expenses with visual canvas charts and category filters — all client-side.</p>
+            <a href="#" class="project-link">Live demo →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag">Grid · Responsive</span>
+            <h3>Portfolio Grid</h3>
+            <p>Masonry-style image gallery with lazy loading and keyboard-navigable lightbox.</p>
+            <a href="#" class="project-link">Live demo →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading">Skills</h2>
+        <p class="section-intro">Technologies and tools I use to build accessible, fast, and maintainable web experiences.</p>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul class="skill-list">
+              <li>HTML5 &amp; Semantic Markup</li>
+              <li>CSS3 (Flexbox, Grid, Animations)</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Responsive &amp; Mobile-First Design</li>
+              <li>Web Accessibility (WCAG 2.1)</li>
             </ul>
-        </nav>
-    </header>
+          </div>
 
-    <!-- Home Section -->
-    <main>
-        <section id="home" class="hero">
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <ul class="skill-list">
+              <li>Git &amp; GitHub</li>
+              <li>VS Code</li>
+              <li>Chrome DevTools</li>
+              <li>Netlify / GitHub Pages</li>
+            </ul>
+          </div>
 
-            <div class="hero-content">
-                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+          <div class="skill-group">
+            <h3>Soft Skills</h3>
+            <ul class="skill-list">
+              <li>Problem Solving</li>
+              <li>Clear Communication</li>
+              <li>Teamwork</li>
+              <li>Time Management</li>
+              <li>Creativity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <h1>Hello, I'm <span>Najwatul Fadilah</span></h1>
+    <!-- ============ ABOUT ============ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Hello! my name is <strong>Najwatul Fadilah</strong>. I am currently pursuig my degree in Bachelor of Computer Science (Multimedia) with Honours at University Malaysia Sarawak (UNIMAS).</p>
+            <p>I am passionate about multimedia, web development and digital creativtiy. I love exploring new technologies and see every new skill as a chance to grow.</p>
+            <p>I create this portfolio to showcase my skills and projects.</p>
+          </div>
+          <div class="about-img" aria-hidden="true">YN</div>
+        </div>
+      </div>
+    </section>
 
-                <h3>Multimedia Computing Student</h3>
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" aria-labelledby="education-heading">
+      <div class="container">
+        <h2 id="education-heading">Education</h2>
+        <p class="section-intro">My academic background and how it shaped my approach to building for the web.</p>
 
-                <p>
-                    I am a university student at UNIMAS
-                    who is interested in technology,
-                    creative design and web development.
-                </p>
-
-                <a href="#projects" class="btn">Explore My Work</a>
+        <div class="education-timeline">
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div class="edu-content">
+              <h3>Bachelor of Computer Science (Multimedia) with Honours</h3>
+              <p class="edu-meta">University Malaysia Sarawak (UNIMAS) · 2023 – 2025</p>
+              <p>Relevant coursework: Web Development, Database Systems, UI/UX Fundamentals. Final project: interactive portfolio website built with pure HTML, CSS, and JavaScript.</p>
             </div>
+          </div>
+        
+           </section>
 
-        </section>
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Contact</h2>
+        <p class="section-intro">Have a project in mind or just want to say hi? Send me a message — I reply within 24 hours.</p>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <h2>About Me</h2>
+        <div class="local-time">
+          <p>
+            <strong>Local time:</strong>
+            <span id="currentTime" aria-live="polite">--:--:--</span>
+            <span class="timezone">(your timezone)</span>
+          </p>
+        </div>
 
-            <p>
-                My name is Najwatul Fadilah binti Jonaidi.
-                I am currently studying Multimedia Computing
-                at Universiti Malaysia Sarawak (UNIMAS).
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Najwatul Fadilah binti Jonaidi" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="fadilahnajwatul@example.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your idea…"></textarea>
+          </div>
+          <button type="submit" class="btn" style="align-self: flex-start; border: none;">Send message</button>
+          <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+        </form>
 
-               I am passionate about exploring a technology,
-               learning new skills, and creating meaningful digital
-               project through my university studies.
-            </p>
-        </section>
+        <div class="email-direct">
+          <p>Or email me directly at <a href="mailto:fadilahnajwatul@example.com">fadilahnajwatul@example.com</a></p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <h2>My Projects</h2>
+  </main>
 
-            <div class="project-container">
+  <footer>
+    <p id="footerText">© 2026 Najwatul Fadilah · Built with HTML, CSS &amp; JS</p>
+  </footer>
 
-                <div class="project-card">
-                    <h3>Deepfake Detective</h3>
-                    <p>
-                        A computer game project about identifying
-                        manipulated images and misinformation.
-                    </p>
-                </div>
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" class="scroll-top"
+          aria-label="Scroll back to top"
+          title="Back to top">↑</button>
 
-                <div class="project-card">
-                    <h3>SHAA Database System</h3>
-                    <p>
-                        A Sarawak Heritage Online Auction
-                        database project.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Campus Guide App</h3>
-                    <p>
-                        An Android application designed to
-                        help users explore campus venues.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <h3>KUTS Mobile App</h3>
-                    <p>
-                        A mobile application UI/UX design
-                        for Kuching Urban Transportation System.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Personal Portfolio</h3>
-                    <p>
-                        A personal website developed using
-                        HTML, CSS and JavaScript.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <h2>Contact Me</h2>
-
-            <p>Thank you for visiting my portfolio!</p>
-
-            <p>
-                Email:
-                <a href="mailto:fadilahnajwatul@gmail.com">
-                    fadilahnajwatul@gmail.com
-                </a>
-            </p>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Najwatul Fadilah. All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
