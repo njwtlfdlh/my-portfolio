@@ -95,20 +95,7 @@
     });
   }
 
-  // ---------- 7. CONTACT FORM ----------
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      formStatus.textContent = '✓ Message sent successfully! (Demo)';
-      formStatus.style.color = '#10b981';
-      contactForm.reset();
-      setTimeout(() => formStatus.textContent = '', 3000);
-    });
-  }
-
-  // ---------- 8. BACK TO TOP BUTTON ----------
+  // ---------- 7. BACK TO TOP BUTTON  ----------
   const backToTopBtn = document.getElementById('backToTop');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
@@ -116,7 +103,7 @@
         top: 0,
         behavior: 'smooth'
       });
-    });
-  }
+    }); 
+  } 
 
-})();
+})(); // <-- INI SANGAT PENTING UNTUK TUTUP FUNGSI UTAMA
