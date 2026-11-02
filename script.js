@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  // ---------- 1. DARK MODE TOGGLE ----------
+  // ---------- dark mode toogle ----------
   const themeToggle = document.getElementById('themeToggle');
   const bodyEl = document.body; 
 
@@ -23,7 +23,7 @@
     });
   }
 
-  // ---------- 2. CURRENT TIME ----------
+  // ---------- current time ----------
   const clockElement = document.getElementById('clock');
   function updateTime() {
     if (!clockElement) return;
@@ -36,7 +36,7 @@
   updateTime();
   setInterval(updateTime, 1000);
 
-  // ---------- 3. MOBILE MENU ----------
+  // ---------- menu mobile ----------
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
   if (navToggle && navMenu) {
@@ -50,7 +50,7 @@
     });
   }
 
-  // ---------- 4. SCROLL PROGRESS & ACTIVE NAV ----------
+  // ---------- scroll & active nav ----------
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-menu a');
   const progressBar = document.getElementById('progressBar');
@@ -71,31 +71,14 @@
     });
   });
 
-  // ---------- 5. DYNAMIC YEAR ----------
+  // ---------- dynamic year ----------
   const footerText = document.getElementById('footerText');
   if (footerText) {
     const year = new Date().getFullYear();
     footerText.innerHTML = `© ${year} Najwatul Fadilah. All rights reserved.`;
   }
 
-  // ---------- 6. COPY EMAIL BUTTON ----------
-  const copyBtn = document.getElementById('copyEmailBtn');
-  const emailText = document.getElementById('emailText');
-  if (copyBtn && emailText) {
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(emailText.textContent).then(() => {
-        const orig = copyBtn.textContent;
-        copyBtn.textContent = 'Copied!';
-        copyBtn.style.background = '#10b981';
-        setTimeout(() => {
-          copyBtn.textContent = orig;
-          copyBtn.style.background = '';
-        }, 2000);
-      });
-    });
-  }
-
-  // ---------- 7. BACK TO TOP BUTTON  ----------
+  // ---------- back to the top button  ----------
   const backToTopBtn = document.getElementById('backToTop');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
@@ -106,4 +89,4 @@
     }); 
   } 
 
-})(); // <-- INI SANGAT PENTING UNTUK TUTUP FUNGSI UTAMA
+})(); 
