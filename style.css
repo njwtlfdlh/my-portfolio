@@ -321,3 +321,39 @@ footer .button:hover {
 @media (min-width: 701px) {
     .nav-toggle { display: none; }
 }
+
+.about-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+}
+
+.about-image {
+      flex-shrink:0;
+}
+
+.profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--strawberry);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+      transform: scale(1.05); 
+}
+
+.body.dark .profile-pic {
+      border-color: var(--matcha-dark);
+}
+
+@media (max-width: 700px){
+      .about-container{
+            flex-direction: cplumn;
+            text-align: center;
+      }
+}
+                         
