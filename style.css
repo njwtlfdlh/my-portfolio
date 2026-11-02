@@ -1,8 +1,8 @@
 /* ========================
-   STRAWBERRY MATCHA
+      STRAWBERRY MATCHA
    ======================== */
 
-/* reset variable */
+/*----------- reset & variable ------------*/
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +10,17 @@
 }
 
 :root {
-    /* Colour Green Matcha  */
+    /* Colour Green Matcha */
     --matcha-light: #e8f0e3;
     --matcha: #8ba888;
     --matcha-dark: #6b8a68;
     
-    /* Colour Green Strawberry  */
+    /* Colour Green Strawberry */
     --strawberry-light: #fce8ec;
     --strawberry: #e89ba8;
     --strawberry-dark: #d17d8c;
 
-    /* UI Colors  */
+    /* UI Colors */
     --bg: #fdfaf6;
     --card-bg: #ffffff;
     --text-main: #3a3a3a;
@@ -28,7 +28,7 @@
     --border: #f0e6e0;
 }
 
-/* Dark Mode  */
+/* Dark Mode */
 body.dark {
     --bg: #1a1c19;
     --card-bg: #262a25;
@@ -55,7 +55,7 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* Acessibility */
+/* ---------- Acessibility ---------- */
 .skip-link {
     position: absolute; top: -60px; left: 1rem;
     background: var(--matcha-dark); color: #fff;
@@ -69,7 +69,7 @@ a:focus-visible, button:focus-visible {
     outline-offset: 3px;
 }
 
-/* progress bar scrolling */
+/* ---------- Progress Bar ---------- */
 #progressBar {
     position: fixed; top: 0; left: 0;
     height: 4px; width: 0;
@@ -78,7 +78,7 @@ a:focus-visible, button:focus-visible {
     transition: width 0.1s linear;
 }
 
-/* header */
+/* ---------- Header ---------- */
 .site-header {
     background: var(--matcha-light);
     padding: 25px 8%;
@@ -115,7 +115,7 @@ nav a:hover, nav a.is-active {
     background: var(--strawberry-dark);
 }
 
-/* button */
+/* ---------- Button ---------- */
 .button {
     display: inline-block;
     background: var(--matcha-dark);
@@ -140,7 +140,7 @@ nav a:hover, nav a.is-active {
 }
 .btn-outline:hover { background: var(--strawberry-dark); color: #fff; }
 
-/* hero */
+/* ---------- Hero ---------- */
 .hero {
     text-align: center;
     padding: 75px 20px;
@@ -158,7 +158,7 @@ nav a:hover, nav a.is-active {
     color: var(--matcha-dark);
 }
 
-/* section & cards */
+/* ---------- Section & Cards ---------- */
 section { padding: 50px 8%; max-width: 1100px; margin: auto; }
 
 section h2 {
@@ -190,7 +190,7 @@ section h2 {
     gap: 20px;
 }
 
-/* tags and lists */
+/* ---------- Tags & Lists ---------- */
 .tag {
     display: inline-block;
     background: var(--strawberry-light);
@@ -207,7 +207,7 @@ section h2 {
 .achievements-list { padding-left: 1.5rem; margin-top: 10px; }
 .achievements-list li { margin-bottom: 6px; color: var(--text-muted); }
 
-/* contact & footer */
+/* ---------- Contact & Footer ---------- */
 .contact {
     text-align: center;
 }
@@ -215,7 +215,7 @@ section h2 {
 .contact-card {
     max-width: 700px;
     margin: 0 auto;
-    text-align: left; 
+    text-align: left; /* Teks contact ke kiri */
 }
 
 .contact-row {
@@ -250,7 +250,7 @@ section h2 {
     transform: scale(1.05);
 }
 
-/* full footer  */
+/* ---------- Footer ---------- */
 footer {
     background: var(--matcha-light) !important; 
     color: var(--matcha-dark) !important;
@@ -281,36 +281,7 @@ footer .button:hover {
     background: var(--strawberry);
 }
 
-/* portfolio profile picture */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.about-image {
-    flex-shrink: 0;
-}
-
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--strawberry);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05); 
-}
-
-body.dark .profile-pic {
-    border-color: var(--matcha-dark);
-}
-
-/* responsive & mobile menu */
+/* ---------- Responsive & Mobile Menu ---------- */
 @media (max-width: 700px) {
     .logo { font-size: 22px; }
     
@@ -345,14 +316,45 @@ body.dark .profile-pic {
     
     .hero h1 { font-size: 28px; }
     section { padding: 35px 6%; }
-
-    /* Mobile About Me */
-    .about-container {
-        flex-direction: column; /* Dah betulkan 'cplumn' jadi 'column' */
-        text-align: center;
-    }
 }
 
+/* ---------- Portfolio Profile Picture ---------- */
 @media (min-width: 701px) {
     .nav-toggle { display: none; }
 }
+
+.about-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+}
+
+.about-image {
+      flex-shrink:0;
+}
+
+.profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--strawberry);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+      transform: scale(1.05); 
+}
+
+.body.dark .profile-pic {
+      border-color: var(--matcha-dark);
+}
+
+@media (max-width: 700px){
+      .about-container{
+            flex-direction: cplumn;
+            text-align: center;
+      }
+}
+                         
