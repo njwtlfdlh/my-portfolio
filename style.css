@@ -1,6 +1,6 @@
-/* =========================================================
-   MATCHA & STRAWBERRY THEME
-   ========================================================= */
+/* ========================
+      STRAWBERRY MATCHA
+   ======================== */
 
 /* ---------- Reset & Variables ---------- */
 * {
@@ -232,7 +232,7 @@ section h2 {
     text-decoration: underline;
 }
 
-/* Butang Copy */
+/* copy btn */
 .copy-btn {
     background: var(--strawberry);
     color: white;
@@ -250,7 +250,7 @@ section h2 {
     transform: scale(1.05);
 }
 
-/* Footer Penuh */
+/* full footer */
 footer {
     background: var(--matcha-light) !important; 
     color: var(--matcha-dark) !important;
