@@ -1,8 +1,7 @@
-/* ========================
-      STRAWBERRY MATCHA
-   ======================== */
 
-/*----------- reset & variable ------------*/
+/*============ STRAWBERRY MATCHA THEME ==========*/
+
+/*----- reset & variable ----- */
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +9,17 @@
 }
 
 :root {
-    /* Colour Green Matcha */
+    /*green matcha colour*/ 
     --matcha-light: #e8f0e3;
     --matcha: #8ba888;
     --matcha-dark: #6b8a68;
-    
-    /* Colour Green Strawberry */
+
+    /*green strawberry colour*/
     --strawberry-light: #fce8ec;
     --strawberry: #e89ba8;
     --strawberry-dark: #d17d8c;
 
-    /* UI Colors */
+    /*UI colours*/
     --bg: #fdfaf6;
     --card-bg: #ffffff;
     --text-main: #3a3a3a;
@@ -33,21 +32,23 @@ body.dark {
     --bg: #1a1c19;
     --card-bg: #262a25;
     --text-main: #e0e6df;
-    --text-muted: #9ba89a;
-    --border: #3b4239;
-    
+    --text-muted: #a0a0a0;
+    --border: #3a3a3a;
+
     --matcha-light: #2a3328;
     --matcha-dark: #a3c49e;
-    --strawberry-light: #3d2a2e;
-    --strawberry-dark: #f0b0be;
+    --strawberry-light: #3a2a2e;
+    --strawberry: #e89ba8;
+    --strawberry-dark: #d17d8c;
 }
 
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+
 }
 
-body {
+body{
     font-family: 'Segoe UI', Arial, sans-serif;
     background: var(--bg);
     color: var(--text-main);
@@ -55,7 +56,7 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* ---------- Acessibility ---------- */
+/*----- Accessibility -----*/
 .skip-link {
     position: absolute; top: -60px; left: 1rem;
     background: var(--matcha-dark); color: #fff;
@@ -69,7 +70,7 @@ a:focus-visible, button:focus-visible {
     outline-offset: 3px;
 }
 
-/* ---------- Progress Bar ---------- */
+/*----- Progress Bar -----*/
 #progressBar {
     position: fixed; top: 0; left: 0;
     height: 4px; width: 0;
@@ -78,7 +79,7 @@ a:focus-visible, button:focus-visible {
     transition: width 0.1s linear;
 }
 
-/* ---------- Header ---------- */
+/*----- Header -----*/
 .site-header {
     background: var(--matcha-light);
     padding: 25px 8%;
@@ -115,7 +116,7 @@ nav a:hover, nav a.is-active {
     background: var(--strawberry-dark);
 }
 
-/* ---------- Button ---------- */
+/*----- Button -----*/
 .button {
     display: inline-block;
     background: var(--matcha-dark);
@@ -138,28 +139,18 @@ nav a:hover, nav a.is-active {
     border: 2px solid var(--strawberry-dark);
     color: var(--strawberry-dark);
 }
-.btn-outline:hover { background: var(--strawberry-dark); color: #fff; }
+.btn-outline:hover { background: var(--strawberry-dark); color: #fff;}
 
-/* ---------- Hero ---------- */
+/*----- Hero -----*/
 .hero {
     text-align: center;
     padding: 75px 20px;
-    background: linear-gradient(135deg, var(--matcha-light), var(--strawberry-light));
-    transition: background 0.3s;
+    background: linear-gradient(135 deg, var(--matcha-light), var(--strawberry-light));
+    transition: background 0.4s;
 }
 
-.hero h1 { font-size: 36px; color: var(--text-main); margin-bottom: 15px; }
-.hero p { max-width: 650px; margin: 0 auto 20px; color: var(--text-muted); }
-
-#clock {
-    margin-top: 15px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--matcha-dark);
-}
-
-/* ---------- Section & Cards ---------- */
-section { padding: 50px 8%; max-width: 1100px; margin: auto; }
+/*----- Section % Cards -----*/
+section { padding: 50px 8%; max-width: 1100px; margin: auto;}
 
 section h2 {
     text-align: center;
@@ -176,21 +167,24 @@ section h2 {
     border: 2px solid var(--border);
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     transition: transform 0.3s, border-color 0.3s, background 0.3s;
+
 }
 
 .card:hover {
     transform: translateY(-4px);
     border-color: var(--strawberry);
-    box-shadow: 0 8px 20px rgba(232, 155, 168, 0.2);
+    box-shadow: 0 8px 20px rgba (232, 155, 168, 0.2);
+
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+
 }
 
-/* ---------- Tags & Lists ---------- */
+/*----- Tags&Lines -----*/
 .tag {
     display: inline-block;
     background: var(--strawberry-light);
@@ -207,7 +201,7 @@ section h2 {
 .achievements-list { padding-left: 1.5rem; margin-top: 10px; }
 .achievements-list li { margin-bottom: 6px; color: var(--text-muted); }
 
-/* ---------- Contact & Footer ---------- */
+/*----- Contact&Footer -----*/
 .contact {
     text-align: center;
 }
@@ -232,7 +226,7 @@ section h2 {
     text-decoration: underline;
 }
 
-/* copy btn */
+/*------ copy button ----- */
 .copy-btn {
     background: var(--strawberry);
     color: white;
@@ -250,7 +244,7 @@ section h2 {
     transform: scale(1.05);
 }
 
-/* ---------- Footer ---------- */
+/* ----- Footer ------*/
 footer {
     background: var(--matcha-light) !important; 
     color: var(--matcha-dark) !important;
@@ -281,7 +275,8 @@ footer .button:hover {
     background: var(--strawberry);
 }
 
-/* ---------- Responsive & Mobile Menu ---------- */
+
+/* ----- Responsive & Mobile Menu ----- */
 @media (max-width: 700px) {
     .logo { font-size: 22px; }
     
@@ -318,24 +313,4 @@ footer .button:hover {
     section { padding: 35px 6%; }
 }
 
-/* ---------- Portfolio Profile Picture ---------- */
-@media (min-width: 701px) {
-    .nav-toggle { display: none; }
-}
 
-.about-container {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-}
-
-.about-image {
-      flex-shrink:0;
-}
-
-@media (max-width: 700px){
-      .about-container{
-            text-align: center;
-      }
-}
-                         
