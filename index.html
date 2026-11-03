@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ Najwatul Fadilah Jonaidi ☆ · Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>☆ Najwatul Fadilah Jonaidi ☆ · Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="progressBar"></div>
-  <a href="main-content" class="skip-link">skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- =========== Header  / navbar ========== -->
-   <header class="site-header">
+  <header class="site-header">
     <div class="logo">☆ Najwatul Fadilah ☆</div>
 
-    <button class="nav-toogle" id="navToggle" aria-label="Toggle navigation">☰ Menu</button>
-
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰ Menu</button>
+    
     <nav>
-      <ul class="nav=menu" id="navMenu">
+      <ul class="nav-menu" id="navMenu">
         <li><a href="#home" class="is-active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
-      </li>
-      <button is"theme-toggle" class=""button" style="padding: 4px 12px; margin:0; border-radius: 12px"></button>
-      </li>
+        <li>
+          <button id="themeToggle" class="button" style="padding: 4px 12px; margin:0; border-radius: 12px;">🌙</button>
+        </li>
       </ul>
     </nav>
-    </header>
+  </header>
 
-    <!-- =======Main content ========== -->
-     <main id="main-content">
-      <!-- ========== Hero section ========= -->
-       <section id="home" class="hero">
-        <h1>Hi, I'm Najwatul Fadilah ☆ </h1>
-        <p>
-        Welcome! I'm a Computer Science (Multimedia) student passionate about tech 
+  <main id="main-content">
+    <!-- ========== hero ========== -->
+    <section id="home" class="hero">
+      <h1>Hi, I'm Najwatul Fadilah ☆ </h1>
+      <p>
+        Welcome! I'm a Computer Science (Multimedia Computing) student passionate about tech 
         and digital design. Here, you'll find an overview of my skills, my educational
-        background, and the creative projects I've worked on.
-        </p>
+        background, and the creative projects I've worked on.</p>
+      
+      <!--Current Time-->
+      <div id="clock">Current Time: --:--:--</div>
+    </section>
 
-        <!-- Current Time Display -->
-         <div id="Clock">Current Time: --:--:--</div>
-         </section>
-
-         <!-- ========== About Me Section ========== -->
-             <section id="about">
+    <!-- =========== About Me ========== -->
+    <section id="about">
       <h2>☆ About Me ☆</h2>
       <div class="card about-container">
       <div class="about-text">
@@ -59,13 +57,12 @@
       </div>
     </section>
 
-    <!-- =========== Project Section ========== -->
-     <section id="projects">
-      <h22>☆ My Projects ☆</h2>
+  <!-- ========= Projects ========== -->
+    <section id="projects">
+      <h2>☆ My Projects ☆</h2>
       <div class="grid">
-
+        
         <div class="card project">
-            <div class="card project">
           <span class="tag">Web Development</span>
           <h3>01. Personal Portfolio Website</h3>
           <p>
@@ -105,12 +102,12 @@
           <p>, joint-limited character animations, and a two-level scoring system.</p>
           <p> <strong> Tools Used:</strong>C++, OpenGl, Computer Ghraphics, VS Code </p>
         </div>
-       
-      </div>
-     </section>
 
-     <!-- ========== Skills Section ========== -->
-         <section id="skills">
+      </div>
+    </section>
+
+    <!-- ========== Skills ========== -->
+    <section id="skills">
       <h2>☆ My Skills ☆</h2>
       <div class="grid">
         <div class="card">
@@ -136,47 +133,50 @@
       </div>
     </section>
 
-    <!-- ========== Education Section ========== -->
+    <!-- ========== Education ========== -->
      <section id="education">
-         <h2>☆ Education ☆</h2>
-
-     <div class ="card" style="max-width: 800px; margin: 0 auto;">
-      <h3>University Malaysia Sarawak (UNIMAS)</h3>
-        <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.8;">
+            <h2>☆ Education ☆</h2>
+            
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <h3>Universiti Malaysia Sarawak (UNIMAS)</h3>
+                <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.8;">
                     <li><strong>Degree:</strong> Bachelor of Computer Science (Multimedia Computing) with Honours</li>
                     <li><strong>Duration:</strong> 2024 - Present</li>
                     <li><strong>Focus:</strong> Multimedia technology, Software development, and web development.</li>
                 </ul>
             </div>
-     </section>
+        </section>
 
-     <!-- ========== Contact Section ========== -->
-      <section id="contact" class="">
+
+    <!-- ========== Contact ========== -->
+    <section id="contact" class="contact">
         <h2>☆ Contact Me ☆</h2>
-        <div class="card contact-container">
-          <p>
-            Thank you for visiting! Wheather you have a question, a project idea,
-             or just to say hi, I am always happy to connect and explore new posiibilities.
-          </p>
-          
-          <div class="contact-row">
-            <span>Email: <a href="mailto:fadilahnajwatul@gmail.com" id="emailText" class="email-link">fadilahnajwatul@gmail.com</a></span>
-          </div>
 
-          <div class="contact-row">
-            <span>Github: <a href="https://github.com/njwtlfdlh/my-portfolio/blob/main/index.html" target="_blank" rel="noopener noreferrer" class="email-link">Visit My Github</a></span>
-          </div>
+        <div class="card contact-card">
+            <p>
+                Thank you for visiting! Whether you have a question, a project idea, 
+                or just want to say hi, I'm always happy to connect and explore new possibilities.
+            </p>
+
+            <div class="contact-row">
+                <span>Email: <a href="mailto:fadilahnajwatul@gmail.com" id="emailText" class="email-link">fadilahnajwatul@gmail.com</a></span>
+             </div>
+
+            <div class="contact-row">
+                <span>GitHub: <a href="https://github.com/njwtlfdlh/my-portfolio/blob/main/index.html" target="_blank" rel="noopener noreferrer" class="email-link">Visit My GitHub</a></span>
+            </div>
         </div>
-      </section>
+    </section>
   </main>
 
-  <!-- ========== Footer Section ========== -->
-   <footer>
-    <p id="footerText" >© 2026 Najwatul Fadilah. All rights reserved.</p>
-    <!-- =========== Back to Top Button ========== -->
-     <button id="backToTop" class="button" style="margin-top: 15px; font-size: 12px; padding: 8px 16px; cursor: pointer;">Back to Top</button>
-   </footer>
+  <!-- ========== Footer ========== -->
+  <footer>
+    <p id="footerText">© 2026 Najwatul Fadilah. All rights reserved.</p>
+    
+    <!-- ========== Back to Top Button ========== -->
+    <button id="backToTop" class="button" style="margin-top: 15px; font-size: 12px; padding: 8px 16px; cursor: pointer;">Back to Top ↑</button>
+  </footer>
 
-   <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
